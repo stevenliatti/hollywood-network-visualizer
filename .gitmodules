@@ -1,0 +1,12 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/stevenliatti/hnv-backend.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/stevenliatti/hnv-frontend.git
+[submodule "tmdb-collector"]
+	path = tmdb-collector
+	url = https://github.com/stevenliatti/tmdb-collector.git
+[submodule "tmdb-to-neo4j"]
+	path = tmdb-to-neo4j
+	url = https://github.com/stevenliatti/tmdb-to-neo4j.git

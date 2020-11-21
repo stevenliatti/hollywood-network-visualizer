@@ -1,0 +1,31 @@
+version: '3'
+services:
+  db:
+    image: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./neo4j/conf:/conf
+      - ./neo4j/plugins:/plugins
+      - ./neo4j/data:/data
+    env_file: neo4j/.env
+    user: 1000:1000
+
+  backend:
+    build: backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    env_file: backend/.env
+    entrypoint: ["./wait-for-it.sh", "db:7687", "--timeout=0", "--", "java", "-jar", "backend.jar"]
+
+  frontend:
+    build: frontend
+    volumes:
+      - ./frontend/web:/usr/share/nginx/html
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

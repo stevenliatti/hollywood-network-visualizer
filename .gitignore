@@ -1,0 +1,6 @@
+.vscode
+.metals
+.env
+data
+deploy
+neo4j
