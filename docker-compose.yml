@@ -18,11 +18,18 @@ services:
       - "8080:8080"
     depends_on:
       - db
-    env_file: backend/.env
+    env_file: .env
     entrypoint: ["./wait-for-it.sh", "db:7687", "--timeout=0", "--", "java", "-jar", "backend.jar"]
 
+  apidoc:
+    image: swaggerapi/swagger-ui
+    depends_on:
+      - backend
+    environment:
+      - API_URL=/api/apidoc.yaml
+
   frontend:
-    build: frontend
+    build: .
     volumes:
       - ./frontend/web:/usr/share/nginx/html
     ports:
