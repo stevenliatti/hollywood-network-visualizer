@@ -9,11 +9,10 @@ neo4j: data/neo4j.tar.xz
 
 data/neo4j.tar.xz:
 	mkdir -p data
-	wget -O $@ https://drive.switch.ch/index.php/s/Q32bd1eZm9vQv6q/download
+	-wget -nc -O $@ https://drive.switch.ch/index.php/s/Q32bd1eZm9vQv6q/download
 
 clean:
 	$(MAKE) -C backend clean
 	$(MAKE) -C tmdb-collector clean
 	$(MAKE) -C tmdb-to-neo4j clean
 
-# .PHONY: up down
