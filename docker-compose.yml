@@ -28,6 +28,16 @@ services:
     environment:
       - API_URL=/api/apidoc.yaml
 
+  cytoscape-backend:
+    build: cytoscape-backend
+    environment:
+      - NODE_ENV=production
+    env_file: .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
   frontend:
     build: .
     volumes:
@@ -35,4 +45,4 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - backend
+      - cytoscape-backend

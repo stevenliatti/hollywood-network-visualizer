@@ -10,3 +10,6 @@
 [submodule "tmdb-to-neo4j"]
 	path = tmdb-to-neo4j
 	url = https://github.com/stevenliatti/tmdb-to-neo4j.git
+[submodule "cytoscape-backend"]
+	path = cytoscape-backend
+	url = https://github.com/stevenliatti/hnv-cytoscape-backend.git
