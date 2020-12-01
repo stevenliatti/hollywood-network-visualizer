@@ -6,7 +6,7 @@ NEO4J_dbms_lock_acquisition_timeout=2m
 NEO4J_dbms_routing_driver_connection_pool_acquisition__timeout=1h
 
 NEO4J_HOST=bolt://db:7687
-BACKEND_INTERFACE="0.0.0.0"
+BACKEND_INTERFACE=0.0.0.0
 BACKEND_HOSTNAME=backend
 BACKEND_PORT=8080
 REDIS_HOSTNAME=redis
