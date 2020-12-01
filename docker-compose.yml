@@ -6,19 +6,17 @@ services:
       - "7474:7474"
       - "7687:7687"
     volumes:
-      - ./neo4j/conf:/conf
-      - ./neo4j/plugins:/plugins
-      - ./neo4j/data:/data
-    env_file: neo4j/.env
+      - ./data/neo4j/conf:/conf
+      - ./data/neo4j/plugins:/plugins
+      - ./data/neo4j/data:/data
+    env_file: env
     user: 1000:1000
 
   backend:
     build: backend
-    ports:
-      - "8080:8080"
     depends_on:
       - db
-    env_file: .env
+    env_file: env
     entrypoint: ["./wait-for-it.sh", "db:7687", "--timeout=0", "--", "java", "-jar", "backend.jar"]
 
   apidoc:
@@ -28,15 +26,22 @@ services:
     environment:
       - API_URL=/api/apidoc.yaml
 
+  redis:
+    image: redis
+    volumes:
+      - ./data/redis:/data
+    env_file: env
+    user: 1000:1000
+    command: redis-server --appendonly yes
+
   cytoscape-backend:
     build: cytoscape-backend
     environment:
       - NODE_ENV=production
-    env_file: .env
-    ports:
-      - "3000:3000"
+    env_file: env
     depends_on:
       - backend
+      - redis
 
   frontend:
     build: .

@@ -4,3 +4,4 @@
 data
 deploy
 neo4j
+*.cypher
