@@ -4,10 +4,13 @@ up:
 down:
 	docker-compose down
 
-init: data/neo4j
+env_frontend: frontend/.env
+	$(MAKE) -C frontend web/env.js
+
+init: env_frontend data/neo4j
 	mkdir -p data/redis
 
-init-with-cache: data/neo4j data/redis
+init-with-cache: env_frontend data/neo4j data/redis
 
 data/neo4j: data/neo4j.tar.xz
 	tar xfv $^ -C data

@@ -24,7 +24,7 @@ To execute `tmdb-to-neo4j`, you have to setup Scala and sbt. To execute `tmdb-co
 Define a `.env` file in `frontend` directory to set `API_BASE_URL`. If you try in local, here the content :
 
 ```
-API_BASE_URL=http://localhost/api
+API_BASE_URL=http://localhost/api-cache
 ```
 
 Run without cache :
