@@ -26,6 +26,11 @@ data/redis.tar.xz:
 	mkdir -p data
 	-wget -nc -O $@ https://drive.switch.ch/index.php/s/PdjrKSxTvTevrfX/download
 
+cache-clean:
+	docker-compose stop redis cytoscape-backend
+	rm -rf data/redis/*
+	$(MAKE) up
+
 clean:
 	$(MAKE) -C backend clean
 	$(MAKE) -C tmdb-collector clean
