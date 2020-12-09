@@ -5,7 +5,7 @@ down:
 	docker-compose down
 
 env_frontend: frontend/.env
-	$(MAKE) -C frontend web/env.js
+	$(MAKE) -C frontend
 
 init: env_frontend data/neo4j
 	mkdir -p data/redis

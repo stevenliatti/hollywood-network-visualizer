@@ -4,7 +4,7 @@ Graph visualization of [TMDb](https://www.themoviedb.org/) data, retrieved from 
 
 Use this visualizer to explore and discover relationships between actors based on communities built using the [modularity optimization](https://neo4j.com/docs/graph-data-science/current/algorithms/modularity-optimization) method. Find the movies in which these actors starred.
 
-To get this project with all submodules :
+To get this project with all submodules ([tmdb-collector](https://github.com/stevenliatti/tmdb-collector), [tmdb-to-neo4j](https://github.com/stevenliatti/tmdb-to-neo4j), [backend](https://github.com/stevenliatti/hnv-backend), [cytoscape-backend](https://github.com/stevenliatti/hnv-cytoscape-backend) and [frontend](https://github.com/stevenliatti/hnv-frontend/)) :
 
 ```bash
 git clone https://github.com/stevenliatti/hollywood-network-visualizer.git --recurse-submodules
@@ -16,8 +16,10 @@ git clone https://github.com/stevenliatti/hollywood-network-visualizer.git --rec
     - [Deployment](#deployment)
   - [Choice of data](#choice-of-data)
   - [Intentions, message to be conveyed](#intentions-message-to-be-conveyed)
-  - [Representation](#representation)
-  - [Presentation and interaction](#presentation-and-interaction)
+  - [Presentation choices](#presentation-choices)
+    - [Representation](#representation)
+    - [Interaction](#interaction)
+    - [Usability](#usability)
   - [Criticism of the tools used](#criticism-of-the-tools-used)
 
 ## Running the system
@@ -245,6 +247,37 @@ We proceeded as follows to recover the data:
 See [tmdb-collector](https://github.com/stevenliatti/tmdb-collector) for more details.
 
 ## Intentions, message to be conveyed
-## Representation
-## Presentation and interaction
+
+Amateurs de ciné, diagrammes sociaux, algos de communautés, associations "spatiales"
+
+## Presentation choices
+
+### Representation
+
+Sous forme de graphe, couleurs pastels (agréables), arrondis, mantra de Schneiderman : graphe principal + secondaire, filtres + search bar -> standars, boutons et contrôles toujours même place -> agréable pour user, popups idem, 
+
+encodage de l'information : formes, couleurs, proximité spatiale, distinction grâce aux couleurs des différents types de noeuds, unité des couleurs (HSL autour du vert, bleu, violet), taille des noeuds et edges dépendent de l'importance des acteurs et du nombre de relations
+
+### Interaction
+
+Contrôles explicites, lien sur les images de movies / acteurs, détails à la demande (mantra de Schneiderman), ludique, "fun", graphe dynamique, contrôle des noeuds, zoom
+
+### Usability
+
+Filtres, boutons, autocomplétion de la recherche, liens web externes vers TMDb, tout sur une page (pas de scroll), intuitif, uniforme, satisfaction, hiérarchisation de l'interface, consistent dans la palette visuelle, on évite le bruit visuel en faisant ressortir les noeuds (bien visibles), comparaisons de communautés
+
+Prototypage intensif avec mockups
+
+Idées non implémentées
+
+
 ## Criticism of the tools used
+
+Plutôt bonnes critiques, la stack tient très bien la route, soit par "bol", soit par expérience.
+
+bonnes critiques cytoscape : super doc, exemples bien foutus,
+
+moins bonnes critiques cytoscape : performances limites quand on pousse à fond
+
+
+CSS voilà quoi ...
