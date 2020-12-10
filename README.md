@@ -2,7 +2,7 @@
 
 Graph visualization of [TMDb](https://www.themoviedb.org/) data, retrieved from API in [Rust](https://www.rust-lang.org/), backed by [Neo4j](https://neo4j.com/) database, [Akka HTTP](https://doc.akka.io/docs/akka-http/current/) backend and frontend built with [Cytoscape.js](https://js.cytoscape.org/).
 
-Use this visualizer to explore and discover relationships between actors based on communities built using the [modularity optimization](https://neo4j.com/docs/graph-data-science/current/algorithms/modularity-optimization) method. Find the movies in which these actors starred.
+Use this visualizer to explore and discover relationships between actors based on communities built using the [modularity optimization](https://neo4j.com/docs/graph-data-science/current/algorithms/modularity-optimization) method. Find the movies in which these actors starred, and navigate between dedicated graphs to jump from actors to movies, from actors to movies, from movies to actors, as long as you want.
 
 ![hnv](screen_readme.png)
 
@@ -250,7 +250,9 @@ See [tmdb-collector](https://github.com/stevenliatti/tmdb-collector) for more de
 
 ## Intentions, message to be conveyed
 
-Movie lovers are our target audience. We like graphical representations, where the speaking elements are the links between the nodes. They offer a representation of associations in space, not just as "simple" two-dimensional tables. We wanted to show the relationships between actors, define their strengths (how often two actors know each other), determine communities of actors. One of our inspirations was this [visualisation of Twitch](https://blog.twitch.tv/en/2015/02/04/visual-mapping-of-twitch-and-our-communities-cause-science-2f5ad212c3da/) on their communities.
+Our first target audience is the cinema enthusiasts and movie lovers. More broadly, we aim to intrigue and attract any curious user enjoying the exploration and manipulation of a dynamic visualization. As developpers, we like graphical representations, where the speaking elements are the nodes and links between them, offering representations of associations in sizes and space, not just as "simple" two-dimensional tables. We wanted to show the relationships between actors, define their strengths (how many other actors one actor knows, how often two actors know each other), and determine communities of actors. One of our inspirations was this [visualisation of Twitch](https://blog.twitch.tv/en/2015/02/04/visual-mapping-of-twitch-and-our-communities-cause-science-2f5ad212c3da/) displaying their communities and their mixing or lack thereof.
+
+The visualization is above all designed to be fun to use, offering a responsive interface and minimising wait times. If it is possible for a user to enjoy a playful exploration of the actors and movies data, and make interesting and even unsuspected discoveries, we consider our intentions met.
 
 ## Presentation choices
 
