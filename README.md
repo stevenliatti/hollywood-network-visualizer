@@ -34,10 +34,10 @@ Developed and tested on Linux, your system need at minimum :
 - docker
 - docker-compose
 
-To execute `tmdb-to-neo4j`, you have to setup Scala and sbt. To execute `tmdb-collector`, you have to setup Rust. See doc in each submodules.
+To execute `tmdb-to-neo4j`, you have to setup Scala and sbt. To execute `tmdb-collector`, you have to setup Rust. See the documentation in each submodule.
 
 ### Deployment
-Define a `.env` file in `frontend` directory to set `API_BASE_URL`. If you try in local, here the content :
+Define a `.env` file in the `frontend` directory to set `API_BASE_URL`. To deploy the visualizer under `localhost`, set it as :
 
 ```
 API_BASE_URL=http://localhost/api-cache
@@ -50,7 +50,7 @@ make init
 make up
 ```
 
-Run with some existent cache :
+Run with some pre-existing cache (WARNING: the cache takes up to multiple GB of data!) :
 
 ```bash
 make init-witch-cache
@@ -59,7 +59,7 @@ make up
 
 ## Choice of data
 
-The data comes from [TMDb](https://www.themoviedb.org/), exactly via its [API](https://developers.themoviedb.org/3/getting-started/introduction). This API gives informations on movies, actors and genres in JSON format. Here you have an excerpt of movie and actor data :
+The data comes from [TMDb](https://www.themoviedb.org/), as obtained from its [API](https://developers.themoviedb.org/3/getting-started/introduction). This API gives information on movies, actors and genres in JSON format. Here you have an excerpt of movie and actor data :
 
 ```json
 {
@@ -237,14 +237,14 @@ The data comes from [TMDb](https://www.themoviedb.org/), exactly via its [API](h
 }
 ```
 
-With only this informations, we can build our relations between actors, movies and genres.
+Using this information, we can build the relations between actors, movies and genres then used to create the graphs.
 
 We proceeded as follows to recover the data:
 
-- We start to get all movie IDs on TMDb with the [daily file exports](https://developers.themoviedb.org/3/getting-started/daily-file-exports). This list contains about 500'000 movies.
-- We only keep movies with an income of more than 10 million dollars.
-- We take the daily file exports of actors too. This list contains about 2 million actors.
-- We sorted the previous list by TMDb popularity and take the first 10'000 actors.
+- Retrieve all movie IDs on TMDb with the [daily file exports](https://developers.themoviedb.org/3/getting-started/daily-file-exports). This list contains about 500'000 movies.
+- Keep movies with an income of more than 10 million dollars.
+- Retrieve the daily file exports of actors. This list contains about 2 million actors.
+- Sort this list by TMDb popularity and take the first 10'000 actors.
 
 See [tmdb-collector](https://github.com/stevenliatti/tmdb-collector) for more details.
 
