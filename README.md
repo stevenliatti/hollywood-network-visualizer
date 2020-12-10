@@ -53,7 +53,7 @@ make up
 Run with some pre-existing cache (WARNING: the cache takes up to multiple GB of data!) :
 
 ```bash
-make init-witch-cache
+make init-with-cache
 make up
 ```
 
