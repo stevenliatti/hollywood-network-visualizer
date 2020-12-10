@@ -256,18 +256,23 @@ Movie lovers are our target audience. We like graphical representations, where t
 
 ### Representation
 
-Our representation takes the form of graphs, networks of nodes and edges. We have tried to follow Schneidermann's mantra: we present the main graph as a general view (*overview first*), the user can then zoom in on it and apply filters as desired (*zoom and filter*). Finally, with the help of the search bar and/or by clicking on the nodes or edges of the graph, he can access more details (*details on demand*): open the actors and movies popups, open the side graph to centre the view on a particular actor or movie. We have placed our buttons and controls in a standard way, always in the same places, which makes the interface pleasant for the user.
+Our representation takes the form of graphs, networks of nodes and edges. We have tried to follow Schneidermann's mantra:
+- We present the main graph as a general view: *overview first* ;
+- The user can then zoom in on it and apply filters as desired: *zoom and filter* ;
+- With the help of the search bar and/or by clicking on the nodes or edges of the graph, they can access more details like actors and movies popups, a dedicated side graph to centre the view on a particular actor or movie: *details on demand*.
 
-We have also done work on the encoding of information: colours are used to distinguish the types of nodes, they are organised in a uniform way (HSL variations from green to purple, with the whole range of blues). The size of the nodes and edges depends on the importance of the actors and the number of relationships they have with each other.
+We have placed our buttons and controls in a standard way, always in the same places, which makes the interface pleasant for the user.
+
+We also worked on the encoding of information, depending on the graph the user focuses on. Using colors for example, on the main graph they represent the communities computed for the actors (also encoded with spatial proximity), and on the side graph they represent the types of nodes displayed (main actor and direct relations, or differentiating between movies, actors, genres and countries). Colors are also organised in a uniform way (HSL variations from green to purple, with the whole range of blues). For another example, the size of the nodes and edges depends on the importance of the actors and the number of relationships they have with each other.
 
 ### Interaction
 
-The interface has explicit controls (buttons have labels, etc.), images of actors and movies contain a link to TMDb). Generally speaking, we have injected a dose of "fun" into this interface: the graphs are dynamic, mouse over elements trigger events, nodes can be manipulated with the mouse, the zoom is functional, search with autocompletion, etc. In short, this interface is entertaining.
+The interface has explicit controls (buttons have labels, etc.), the visualization evolves dynmically (popups and additional information appear depending on user mouse movement, images of actors and movies contain a link to TMDb that show up on mouse hovering). Generally speaking, we have injected a dose of "fun" into this interface: the graphs are dynamic, mouse over elements trigger events, nodes can be manipulated with the mouse, the zoom is functional, search with autocompletion, etc. In short, this interface is entertaining, meeting up with our intentions of making a visualization that offers playful/recreational exploration.
 
 ### Usability
 
-Our interface is highly manipulable: there are filters to be applied on the main graph, buttons to launch commands, auto-completion of the search, external web links to TMDb, etc. The whole web app fits on one page (no scroll), it is intuitive and uniform, and provides user satisfaction. It is organised in a hierarchical way, consistent in the visual palette, visual "noise" is avoided by highlighting the essential elements.
+Our interface is highly manipulable: there are filters to be applied on the main graph, buttons to launch commands, auto-completion of the search, external web links to TMDb, etc. The whole web app fits on one page (no scroll), it is intuitive and uniform, and aims to provide user satisfaction. It is organised in a hierarchical way, consistent in the visual palette, visual "noise" is avoided by highlighting the essential elements.
 
 ## Criticism of the tools used
 
-We practiced intensive prototyping using mockups, which gave us the visual guideline to follow. As far as the reviews are concerned, they are rather good, generally speaking our entire technical stack is solid, either thanks to our experience with the tools, or by "luck" to have chosen adapted tools, which was the case for Cytoscape.js for example. The documentation for Cytoscape.js is complete and the examples and demos are very well done. If one had to make some criticisms, however, one can see that Cytoscape.js has difficulty with large graphs, the calculation time can be long (solved thanks to the cache).
+We practiced intensive prototyping using mockups, which gave us the visual guideline to follow. As far as the reviews are concerned, they are rather good. Generally speaking our entire technical stack is solid, either thanks to our experience with the tools, or by "luck" to have chosen adapted tools, which was the case for Cytoscape.js for example. The documentation for Cytoscape.js is complete and the examples and demos are very well done. If one had to make some criticisms, however, one can see that Cytoscape.js has difficulty with large graphs, the calculation time can be long (solved thanks to our cache).
