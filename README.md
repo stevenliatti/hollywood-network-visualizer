@@ -4,13 +4,13 @@ Graph visualization of [TMDb](https://www.themoviedb.org/) data, retrieved from 
 
 Use this visualizer to explore and discover relationships between actors based on communities built using the [modularity optimization](https://neo4j.com/docs/graph-data-science/current/algorithms/modularity-optimization) method. Find the movies in which these actors starred.
 
+![hnv](screen_readme.png)
+
 To get this project with all submodules ([tmdb-collector](https://github.com/stevenliatti/tmdb-collector), [tmdb-to-neo4j](https://github.com/stevenliatti/tmdb-to-neo4j), [backend](https://github.com/stevenliatti/hnv-backend), [cytoscape-backend](https://github.com/stevenliatti/hnv-cytoscape-backend) and [frontend](https://github.com/stevenliatti/hnv-frontend/)) :
 
 ```bash
 git clone https://github.com/stevenliatti/hollywood-network-visualizer.git --recurse-submodules
 ```
-
-![hnv](screen_readme.png)
 
 - [Hollywood Network Visualizer](#hollywood-network-visualizer)
   - [Running the system](#running-the-system)
@@ -256,13 +256,13 @@ Movie lovers are our target audience. We like graphical representations, where t
 
 ### Representation
 
-Sous forme de graphe, couleurs pastels (agréables), arrondis, mantra de Schneiderman : graphe principal + secondaire, filtres + search bar -> standars, boutons et contrôles toujours même place -> agréable pour user, popups idem, 
+Our representation takes the form of graphs, networks of nodes and edges. We have tried to follow Schneidermann's mantra: we present the main graph as a general view (*overview first*), the user can then zoom in on it and apply filters as desired (*zoom and filter*). Finally, with the help of the search bar and/or by clicking on the nodes or edges of the graph, he can access more details (*details on demand*): open the actors and movies popups, open the side graph to centre the view on a particular actor or movie. We have placed our buttons and controls in a standard way, always in the same places, which makes the interface pleasant for the user.
 
-encodage de l'information : formes, couleurs, proximité spatiale, distinction grâce aux couleurs des différents types de noeuds, unité des couleurs (HSL autour du vert, bleu, violet), taille des noeuds et edges dépendent de l'importance des acteurs et du nombre de relations
+We have also done work on the encoding of information: colours are used to distinguish the types of nodes, they are organised in a uniform way (HSL variations from green to purple, with the whole range of blues). The size of the nodes and edges depends on the importance of the actors and the number of relationships they have with each other.
 
 ### Interaction
 
-Contrôles explicites, lien sur les images de movies / acteurs, détails à la demande (mantra de Schneiderman), ludique, "fun", graphe dynamique, contrôle des noeuds, zoom
+The interface has explicit controls (buttons have labels, etc.), images of actors and movies contain a link to TMDb). Generally speaking, we have injected a dose of "fun" into this interface: the graphs are dynamic, mouse over elements trigger events, nodes can be manipulated with the mouse, the zoom is functional, search with autocompletion, etc. In short, this interface is entertaining.
 
 ### Usability
 
