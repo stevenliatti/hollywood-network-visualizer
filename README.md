@@ -266,20 +266,8 @@ The interface has explicit controls (buttons have labels, etc.), images of actor
 
 ### Usability
 
-Filtres, boutons, autocomplétion de la recherche, liens web externes vers TMDb, tout sur une page (pas de scroll), intuitif, uniforme, satisfaction, hiérarchisation de l'interface, consistent dans la palette visuelle, on évite le bruit visuel en faisant ressortir les noeuds (bien visibles), comparaisons de communautés
-
-Prototypage intensif avec mockups
-
-Idées non implémentées
-
+Our interface is highly manipulable: there are filters to be applied on the main graph, buttons to launch commands, auto-completion of the search, external web links to TMDb, etc. The whole web app fits on one page (no scroll), it is intuitive and uniform, and provides user satisfaction. It is organised in a hierarchical way, consistent in the visual palette, visual "noise" is avoided by highlighting the essential elements.
 
 ## Criticism of the tools used
 
-Plutôt bonnes critiques, la stack tient très bien la route, soit par "bol", soit par expérience.
-
-bonnes critiques cytoscape : super doc, exemples bien foutus,
-
-moins bonnes critiques cytoscape : performances limites quand on pousse à fond, z-index
-
-
-CSS voilà quoi ...
+We practiced intensive prototyping using mockups, which gave us the visual guideline to follow. As far as the reviews are concerned, they are rather good, generally speaking our entire technical stack is solid, either thanks to our experience with the tools, or by "luck" to have chosen adapted tools, which was the case for Cytoscape.js for example. The documentation for Cytoscape.js is complete and the examples and demos are very well done. If one had to make some criticisms, however, one can see that Cytoscape.js has difficulty with large graphs, the calculation time can be long (solved thanks to the cache).
