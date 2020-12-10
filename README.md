@@ -10,6 +10,8 @@ To get this project with all submodules ([tmdb-collector](https://github.com/ste
 git clone https://github.com/stevenliatti/hollywood-network-visualizer.git --recurse-submodules
 ```
 
+![hnv](screen_readme.png)
+
 - [Hollywood Network Visualizer](#hollywood-network-visualizer)
   - [Running the system](#running-the-system)
     - [Dependencies](#dependencies)
@@ -248,7 +250,7 @@ See [tmdb-collector](https://github.com/stevenliatti/tmdb-collector) for more de
 
 ## Intentions, message to be conveyed
 
-Amateurs de ciné, diagrammes sociaux, algos de communautés, associations "spatiales"
+Movie lovers are our target audience. We like graphical representations, where the speaking elements are the links between the nodes. They offer a representation of associations in space, not just as "simple" two-dimensional tables. We wanted to show the relationships between actors, define their strengths (how often two actors know each other), determine communities of actors. One of our inspirations was this [visualisation of Twitch](https://blog.twitch.tv/en/2015/02/04/visual-mapping-of-twitch-and-our-communities-cause-science-2f5ad212c3da/) on their communities.
 
 ## Presentation choices
 
@@ -277,7 +279,7 @@ Plutôt bonnes critiques, la stack tient très bien la route, soit par "bol", so
 
 bonnes critiques cytoscape : super doc, exemples bien foutus,
 
-moins bonnes critiques cytoscape : performances limites quand on pousse à fond
+moins bonnes critiques cytoscape : performances limites quand on pousse à fond, z-index
 
 
 CSS voilà quoi ...
