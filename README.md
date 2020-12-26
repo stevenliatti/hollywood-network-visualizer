@@ -258,7 +258,7 @@ The visualization is above all designed to be fun to use, offering a responsive 
 
 ### Representation
 
-Our representation takes the form of graphs, networks of nodes and edges. We have tried to follow Schneidermann's mantra:
+Our representation takes the form of graphs, networks of nodes and edges. We have tried to follow Shneiderman's mantra:
 - We present the main graph as a general view: *overview first* ;
 - The user can then zoom in on it and apply filters as desired: *zoom and filter* ;
 - With the help of the search bar and/or by clicking on the nodes or edges of the graph, they can access more details like actors and movies popups, a dedicated side graph to centre the view on a particular actor or movie: *details on demand*.
