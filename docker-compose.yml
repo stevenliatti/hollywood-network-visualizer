@@ -1,6 +1,6 @@
 version: '3'
 services:
-  db:
+  hnv-db:
     image: neo4j
     ports:
       - "7474:7474"
@@ -12,21 +12,21 @@ services:
     env_file: env
     user: 1000:1000
 
-  backend:
+  hnv-backend:
     build: backend
     depends_on:
-      - db
+      - hnv-db
     env_file: env
-    entrypoint: ["./wait-for-it.sh", "db:7687", "--timeout=0", "--", "java", "-jar", "backend.jar"]
+    entrypoint: ["./wait-for-it.sh", "hnv-db:7687", "--timeout=0", "--", "java", "-jar", "backend.jar"]
 
-  apidoc:
+  hnv-apidoc:
     image: swaggerapi/swagger-ui
     depends_on:
-      - backend
+      - hnv-backend
     environment:
       - API_URL=/api/apidoc.yaml
 
-  redis:
+  hnv-redis:
     image: redis
     volumes:
       - ./data/redis:/data
@@ -34,20 +34,20 @@ services:
     user: 1000:1000
     command: redis-server --appendonly yes
 
-  cytoscape-backend:
+  hnv-cytoscape-backend:
     build: cytoscape-backend
     environment:
       - NODE_ENV=production
     env_file: env
     depends_on:
-      - backend
-      - redis
+      - hnv-backend
+      - hnv-redis
 
-  frontend:
+  hnv-frontend:
     build: .
     volumes:
       - ./frontend/web:/usr/share/nginx/html
     ports:
       - "80:80"
     depends_on:
-      - cytoscape-backend
+      - hnv-cytoscape-backend

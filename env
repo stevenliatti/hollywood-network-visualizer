@@ -5,11 +5,11 @@ NEO4J_dbms_security_procedures_unrestricted=gds.*
 NEO4J_dbms_lock_acquisition_timeout=2m
 NEO4J_dbms_routing_driver_connection_pool_acquisition__timeout=1h
 
-NEO4J_HOST=bolt://db:7687
+NEO4J_HOST=bolt://hnv-db:7687
 BACKEND_INTERFACE=0.0.0.0
-BACKEND_HOSTNAME=backend
+BACKEND_HOSTNAME=hnv-backend
 BACKEND_PORT=8080
-REDIS_HOSTNAME=redis
+REDIS_HOSTNAME=hnv-redis
 REDIS_PORT=6379
 CYTOSCAPE_HOSTNAME=0.0.0.0
 CYTOSCAPE_PORT=3000
